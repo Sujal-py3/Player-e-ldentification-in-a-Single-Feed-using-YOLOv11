@@ -97,7 +97,7 @@ output_final.mp4: output video
 - Use ONNX or TensorRT for optimized inference
 ---
 ### Author
-Sujal Singh
-B.Tech CSE, Bennett University
-GitHub: @Sujal-py3
-Email: sujal3177@gmail.com
+- Sujal Singh
+- B.Tech CSE, Bennett University
+- GitHub: @Sujal-py3
+- Email: sujal3177@gmail.com
