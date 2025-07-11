@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/79134782/278758088-d78028a8-c768-4bd8-9b01-29779c8d2857.png" alt="Soccer Re-ID Banner" width="100%" />
-</p>
-
 <h2 align="center">Soccer Player Re-Identification Assignment</h2>
 
 <p align="center">
