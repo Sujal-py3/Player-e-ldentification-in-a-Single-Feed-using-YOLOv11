@@ -1,102 +1,107 @@
-# ⚽ Soccer Player Re-Identification Assignment
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79134782/278758088-d78028a8-c768-4bd8-9b01-29779c8d2857.png" alt="Soccer Re-ID Banner" width="100%" />
+</p>
 
-A computer vision pipeline for detecting, tracking, and re-identifying soccer players in real-time video footage using YOLOv8 and Deep SORT.
+<h2 align="center">Soccer Player Re-Identification Assignment</h2>
 
-> 🔍 Built as part of a technical assignment focused on real-world object tracking and ID management.
+<p align="center">
+  A computer vision pipeline to detect and re-identify players across video frames using YOLOv8 and tracking logic.
+</p>
 
----
-
-## 🎬 Demo
-
-> *(Insert demo GIF or video link here if available)*  
-> Example output: `outputs/video_with_ids.mp4`  
-> Output JSON: `outputs/player_tracks.json`
-
----
-
-## 🚀 Features
-
-- 🧠 **YOLOv8-based player detection**
-- 🔁 **Deep SORT tracking with cosine distance**
-- 🧩 Modular structure with separate detection/tracking logic
-- 🧵 Optional jersey color clustering via KMeans
-- 💾 JSON export of all tracked player data
-- 📹 Annotated video output with ID overlays
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8+-blue?style=flat&logo=python" />
+  <img src="https://img.shields.io/badge/OpenCV-4.x-orange?style=flat&logo=opencv" />
+  <img src="https://img.shields.io/badge/YOLOv8-ultralytics-red?style=flat&logo=ai" />
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" />
+</p>
 
 ---
 
-## 🗂️ Folder Structure
+## 📌 Problem Statement
 
+Detect and consistently track soccer players in a video using object detection and re-identification techniques. The final output includes:
+
+- A tracked video with unique player IDs
+- A structured log file with player trajectories
 
 ---
 
-## 🧰 Installation & Setup
+## 🗂 Folder Structure
 
-### 📦 Requirements
 
-- Python 3.8 or higher
-- `ffmpeg` installed and in PATH
-- YOLOv8-compatible dependencies
 
-### ⚙️ Setup Instructions
+.
+├── 15sec_input_720p.mp4 # Input soccer match video
+├── best.pt # YOLOv8 model weights
+├── tracked_output.mp4 # Video with player tracking annotations
+├── output_final.mp4 # (Optional) Post-processed final output
+├── tracking_script.py # Main tracking pipeline
+---
 
-1. (Optional) Create a virtual environment:
+## How to Run
 
-```bash
-python -m venv venv
-source venv/bin/activate        # macOS/Linux
-venv\Scripts\activate           # Windows
-
+### 1. Install dependencies
 
 ```bash
 pip install ultralytics opencv-python numpy
-
-✅ ultralytics includes YOLOv8 support out of the box.
-
-▶️ How to Run
-Run the tracking script using:
-
+```
+### 2. Run the script
 ```bash
 python tracking_script.py
-Make sure 15sec_input_720p.mp4 and best.pt are in the same folder.
-Output will be saved as:
-
-tracked_output.mp4 → Tracked player IDs on video
-
-output_final.mp4 → (Optional final version)
+```
 ---
-### 🧠 Methodology
-Detection: YOLOv8 with pretrained weights (best.pt)
 
-Tracking: Simple ID assignment or distance-based re-identification
+### 3. Outputs
+tracked_output.mp4: Tracked video with bounding boxes and unique player IDs
 
-Visualization: OpenCV drawing functions to overlay IDs on frames
+output_final.mp4: output video 
 
-## 🔍 Techniques Explored
-Technique	Outcome
-YOLOv8 Detection	Fast and accurate
-IOU-based tracking (simple)	Decent but may switch IDs on occlusion
-Custom tweaks (optional)	Fine-tuned thresholding for smoother IDs
+---
+### Methodology
+- Detection: YOLOv8 is used for per-frame player detection.
 
-🧗 Challenges Faced
-⚠️ Occlusion during close contact confused ID consistency
+- Tracking: Basic ID assignment using centroid distance and IOU matching.
 
-⌛ Re-identification without jersey number/OCR was limited
+- Re-identification: Players are matched across frames based on spatial proximity.
 
-🐌 Some lag without GPU during real-time processing
+- Output: Annotated video and optional log file for player positions over time.
 
-🔮 Future Improvements
-📸 Integrate OCR for jersey numbers
+---
+## Experiments and Observations
 
-🧠 Add Deep SORT or appearance-based re-ID
+- **Baseline**:
+  - YOLOv8 + centroid-based tracking
 
-🚀 Optimize runtime using ONNX/TensorRT
+- **Challenges**:
+  - Player occlusion
+  - Jersey similarity
+  - Camera motion
 
-🧵 Add temporal smoothing and better ID switching logic
+- **Improvements Considered**:
+  - Deep SORT integration
+  - KMeans clustering on jersey colors
+  - Re-ID embeddings (e.g., cosine distance, face features)
 
-🙋‍♂️ **Author**
+---
+### Challenges
+- Occlusion between players causes identity switching
+
+- Visually similar players are difficult to distinguish
+
+- Real-time processing is slower without GPU acceleration
+
+---
+### Future work
+- Incorporate OCR for jersey number recognition
+
+- Add appearance-based Re-ID for stronger identity consistency
+
+- Implement multi-camera feed tracking
+
+- Use ONNX or TensorRT for optimized inference
+---
+### Author
 Sujal Singh
-🎓 B.Tech CSE, Bennett University
-🌐 GitHub: @Sujal-py3
-📫 Email: sujal3177@gmail.com
-
+B.Tech CSE, Bennett University
+GitHub: @Sujal-py3
+Email: sujal3177@gmail.com
