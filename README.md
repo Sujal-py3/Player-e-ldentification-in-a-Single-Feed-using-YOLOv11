@@ -64,8 +64,8 @@ Output will be saved as:
 tracked_output.mp4 → Tracked player IDs on video
 
 output_final.mp4 → (Optional final version)
-
-🧠 Methodology
+---
+### 🧠 Methodology
 Detection: YOLOv8 with pretrained weights (best.pt)
 
 Tracking: Simple ID assignment or distance-based re-identification
