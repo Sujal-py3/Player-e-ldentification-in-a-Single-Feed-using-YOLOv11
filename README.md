@@ -23,7 +23,7 @@ Detect and consistently track soccer players in a video using object detection a
 ---
 MODEL
 ```
-https://drive.google.com/file/d/1-5fOSHOSB9UXyP enOoZNAMScrePVcMD/view
+https://drive.google.com/file/d/1-5fOSHOSB9UXyP_enOoZNAMScrePVcMD/view
 ```
 ## 🗂 Folder Structure
 
