@@ -21,7 +21,8 @@ Detect and consistently track soccer players in a video using object detection a
 - A structured log file with player trajectories
 
 ---
-MODEL = https://drive.google.com/file/d/1-5fOSHOSB9UXyP enOoZNAMScrePVcMD/view
+MODEL
+https://drive.google.com/file/d/1-5fOSHOSB9UXyP enOoZNAMScrePVcMD/view
 ## 🗂 Folder Structure
 
 
